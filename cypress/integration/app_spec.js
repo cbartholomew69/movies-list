@@ -1,5 +1,5 @@
-describe('First Test', function() {
-    it('Visit Movie List App', function() {
+describe('First Test', () => {
+    it('Visit Movie List App', () => {
       cy.visit('http://localhost:3000')
     })
   })
