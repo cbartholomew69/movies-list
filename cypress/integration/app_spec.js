@@ -36,4 +36,17 @@ describe('check for the words Alice in Wonderland', () => {
     cy.contains('Alice in Wonderland')
   })
 })
+
+context('Pagination', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/commands') //not sure if this is correct but it passes.  
+  })
+
+  it('.find()', () => {
+    cy.get('.pagination-md').find('li').find('a').should('have.length', 9)
+
+    cy.go('forward')
+    cy.go('back')
+  })
+})
 })
