@@ -5,6 +5,7 @@ describe('First Test', () => {
 
   it('has title', () => {
     cy.title().should('include', 'Movie List')
+    
   })
 
   it('checks for img', () => {
@@ -57,6 +58,18 @@ context('Actions', () => {
 
   it('.click() click DOM element', () => {
     cy.get('.btn-primary').click() // not sure if this is the same as up top?
+  })
+ })
+
+ context('Querying', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/commands/querying')
+  })
+  it('cy.root() - query root DOM element and location', () => {
+    cy.root().should('match', 'html')
+    cy.location().should((loc) => {
+      expect(loc.href).to.include('commands/querying')
+    })
   })
  })
 })
