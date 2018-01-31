@@ -17,4 +17,8 @@ describe('check for the words Alice in Wonderland', () => {
   it('checks for img', () => {
     cy.get('img').invoke('attr', 'https://images-na.ssl-images-amazon.com/images/M/MV5BODQwOTc5MDM2N15BMl5BanBnXkFtZTcwODQxNTEzNA@@._V1_SX300.jpg')
   })
+
+  it('dropdown btn', () => {
+    cy.get('.btn-sm.btn-default')
+  })
 })
