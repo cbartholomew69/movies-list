@@ -49,4 +49,14 @@ context('Pagination', () => {
     cy.go('back')
   })
 })
+
+context('Actions', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/commands/actions')
+  })
+
+  it('.click() click DOM element', () => {
+    cy.get('.btn-primary').click() // not sure if this is the same as up top?
+  })
+ })
 })
